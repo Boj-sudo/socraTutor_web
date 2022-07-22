@@ -1,0 +1,46 @@
+<section class="loginnow">
+    <div class="login col-lg-4 m-auto shadow-lg">
+      <div class="text-center">
+        <h2>Login</h2>
+        <h6>Please enter your credentials</h6>
+    </div>
+
+    <form #loginForm="ngForm" (ngSubmit)="loginForm.valid && onSubmit(loginForm)">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="" class="form-label">Email address</label>
+          <input type="email" #Student_Email="ngModel" class="form-control" [(ngModel)]="user_service.studentUser.Student_Email" name="Student_Email">
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" #Student_Password="ngModel" class="form-control" [(ngModel)]="user_service.studentUser.Student_Password" name="Student_Password">
+        </div>
+        
+        <div class="userlogin">
+          <label for="users">Login As:</label>
+            <select [(ngModel)]="user_selected" (ngModelChange)="onUserSelected($event)">
+              <option value="Admin">Admin</option>
+              <option value="Student">Student</option>
+              <option value="Tutor">Tutor</option>
+            </select>
+        </div>
+         <br>
+        <button type="submit" class="btn btn-primary col-lg-12">Login</button>
+      </form>  
+         
+      <a style="color: orangered; margin-left: 10px" routerLink="/register">New user? click here to register</a>
+
+      <br>
+
+      <a style="color: orangered; margin-left: 10px" routerLink="/reset-password">Forgot your password?</a>
+
+      <div class="success" *ngIf="success_message">
+        Information has been saved successfully
+        {{user_selected}}
+      </div>
+
+      <div class="alert" *ngIf="error_message">
+        {{error_message}}
+      </div>
+    </div>
+</section>

@@ -1,0 +1,18 @@
+.contactus
+{
+    background-color: #eff6ff;
+    padding: 140px 100px;
+}
+
+.contact
+{
+    background-color: #ffffff;
+    padding: 20px 30px;
+}
+
+@media screen and (max-width:600px){
+    .contactus
+     {
+        padding: 140px 30px;
+     }
+}

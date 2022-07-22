@@ -1,0 +1,66 @@
+<section class="registeruser">
+  <div class="register col-lg-7 m-auto shadow-lg">
+    <div class="text-center">
+      <h1>Sign Up</h1>
+      <h6>Please provide the details below to sign up.</h6>
+    </div>
+
+    <form #registerForm="ngForm" (ngSubmit)="registerForm.valid && onSubmit(registerForm)">
+      <div class="mb-3">
+        <label for="exampleInputFirstName" class="form-label">First Name</label>
+        <input type="text" #Student_Name="ngModel" class="form-control" [(ngModel)]="user_service.studentUser.Student_Name" name="Student_Name">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputLastName" class="form-label">Last Name</label>
+        <input type="text" #Student_Surname="ngModel" class="form-control" [(ngModel)]="user_service.studentUser.Student_Surname" name="Student_Surname">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputContact" class="form-label">Phone Numbers</label>
+        <input type="text" #Student_Contact="ngModel" class="form-control" [(ngModel)]="user_service.studentUser.Student_Contact" name="Student_Contact">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputContact" class="form-label">Home Address</label>
+        <input type="text" #Student_Address="ngModel" class="form-control" [(ngModel)]="user_service.studentUser.Student_Address" name="Student_Address">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputContact" class="form-label">Identity Number</label>
+        <input type="text" #Student_ID_No="ngModel" class="form-control" [(ngModel)]="user_service.studentUser.Student_ID_No" name="Student_ID_No">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email Address</label>
+        <input type="email" #Student_Email="ngModel" class="form-control" [(ngModel)]="user_service.studentUser.Student_Email" name="Student_Email">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" #Student_Password="ngModel" class="form-control" [(ngModel)]="user_service.studentUser.Student_Password" name="Student_Password">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputPassword2" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" name="Password2">
+      </div>
+
+      <br>
+
+      <button type="submit" class="btn btn-primary col-lg-12">Register</button>
+    </form> 
+    
+    <a style="color: orangered; margin-top: 10px" routerLink="/login">Already registered? Click to Login </a>
+
+    <div class="success" *ngIf="success_message">
+      Information has been saved successfully
+      {{user_selected}}
+    </div>
+
+    <div class="alert" *ngIf="error_message">
+      {{error_message}}
+    </div>
+</div> 
+</section>
+

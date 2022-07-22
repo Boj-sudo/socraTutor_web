@@ -1,0 +1,44 @@
+<section class="profiles">
+    <div class="profile col-lg-11 m-auto shadow-lg">
+        <div class="d-flex flex-row bd-highlight mb-3">
+            <div class="form-group row" style="width: 70%;">
+                <label class="col-sm-2 col-form-label">Student Name</label>
+                <div class="col-sm-10">
+                    <input type="type" class="form-control" [(ngModel)]="Student_Name">
+                </div>
+        
+                <label class="col-sm-2 col-form-label">Student Surname</label>
+                <div class="col-sm-10">
+                    <input type="type" class="form-control" [(ngModel)]="Student_Surname">
+                </div>
+        
+                <label class="col-sm-2 col-form-label">Student Address</label>
+                <div class="col-sm-10">
+                    <input type="type" class="form-control" [(ngModel)]="Student_Address">
+                </div>
+        
+                <label class="col-sm-2 col-form-label">Student Contact</label>
+                <div class="col-sm-10">
+                    <input type="type" class="form-control" [(ngModel)]="Student_Contact">
+                </div>
+        
+                <label class="col-sm-2 col-form-label">Student ID Number</label>
+                <div class="col-sm-10">
+                    <input type="type" class="form-control" [(ngModel)]="Student_ID_No">
+                </div>
+        
+                <label class="col-sm-2 col-form-label">Student Email</label>
+                <div class="col-sm-10">
+                    <input type="type" class="form-control" [(ngModel)]="Student_Email">
+                </div>
+            </div>
+        
+            <div class="ml-3 bd-highlight" style="width: 30%;">
+            <img [src]=Photo_Path height="250px;" width="200px;">
+            <input type="file" (change)="uploadPhoto($event)" class="mt-2"/>
+            </div>
+        </div>
+        
+        <button (click)="updateStudent()" *ngIf="stu.Student_ID !=0" class="btn btn-primary">Update</button>
+    </div>
+</section>

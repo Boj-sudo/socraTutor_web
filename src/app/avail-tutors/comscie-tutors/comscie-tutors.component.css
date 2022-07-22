@@ -1,0 +1,20 @@
+.comscie
+{
+    background-color: #eff6ff;
+    padding: 50px 100px;
+}
+
+.box
+{
+    background-color: #ffffff;
+    padding: 10px 20px;
+}
+
+@media screen and (max-width:600px)
+{
+  .comscie
+    {
+    background-color: #eff6ff;
+    padding: 50px 10px;
+    }
+}
